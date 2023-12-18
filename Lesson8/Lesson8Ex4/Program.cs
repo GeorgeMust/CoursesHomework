@@ -79,9 +79,12 @@ namespace Les8Ex4
             Item item3 = new Item();
 
             Bag bag = new Bag();
-            bag.IsOpen = true;
 
             bag.AddItem(item1);
+
+            bag.IsOpen = true;
+
+            
             bag.AddItem(item2);
             bag.AddItem(item3);
 
