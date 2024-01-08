@@ -1,6 +1,6 @@
 ﻿namespace Lesson12Ex1
 {
-    abstract class Animal
+    public abstract class Animal
     {
         protected string name = "";
         protected int numOfLegs;
@@ -25,7 +25,7 @@
             Console.WriteLine("Animal");
         }
     }
-    internal class Cat: Animal, ICarnivore
+    public class Cat: Animal, ICarnivore
     {
         private string sound;
         private string color;
@@ -48,7 +48,7 @@
             Console.WriteLine(typeC);
         }
     }
-    internal class Bear: Animal, ICarnivore, IHerbivore
+    public class Bear: Animal, ICarnivore, IHerbivore
     {
         private string sound;
         private string color;
@@ -78,7 +78,7 @@
             Console.WriteLine(typeC);
         }
     }
-    internal class Elephant: Animal, IHerbivore
+    public class Elephant: Animal, IHerbivore
     {
         private string sound;
         private string color;
