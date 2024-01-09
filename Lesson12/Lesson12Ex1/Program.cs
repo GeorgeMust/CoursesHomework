@@ -78,20 +78,40 @@
             Console.WriteLine(typeC);
         }
     }
-    public class Elephant: Animal, IHerbivore
+    public class Elephant: Animal, IHerbivore, IEquatable
     {
         private string sound;
         private string color;
+        public double size;
 
         public string typeH { get; }
         public string foodH { get; }
-
-        public Elephant(string sound, string color): base()
+        public bool MyEquals(double other)
+        {
+            if(other == this.size)
+            {
+                return true;
+            }
+            else
+            {
+                if(this.size < other)
+                {
+                    Console.WriteLine("Размер слона " + this.name + " меньше " + other);
+                }
+                else
+                {
+                    Console.WriteLine("Размер слона " + this.name + " больше " + other);
+                }
+                return false;
+            }
+        }
+        public Elephant(string sound, string color, double size) : base()
         {
             this.sound = sound;
             this.color = color;
             this.typeH = "Слон";
             this.foodH = "Листья";
+            this.size = size;
         }
         public void displayEatH()
         {
@@ -115,15 +135,35 @@
         public string foodH { get; }
         public void displayEatH();
     }
+    public interface IEquatable
+    {
+        public bool MyEquals(double other);
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Elephant elephant = new Elephant("Гудок", "Серый");
-            elephant.setName("El1");
-            elephant.displayAnimal();
-            Console.WriteLine(elephant.getName());
-            elephant.displayEatH();
+            Elephant elephant1 = new Elephant("Гудок", "Серый", 3.2);
+            elephant1.setName("El1");
+            elephant1.displayAnimal();
+            Console.WriteLine(elephant1.getName());
+            elephant1.displayEatH();
+
+            Elephant elephant2 = new Elephant("Гудок", "Светло-Серый", 3.4);
+            elephant2.setName("El2");
+            elephant2.displayAnimal();
+            Console.WriteLine(elephant2.getName());
+            elephant2.displayEatH();
+
+            if (elephant1.MyEquals(elephant2.size))
+            {
+                Console.WriteLine("Размеры слонов равны");
+            }
+            else
+            {
+                Console.WriteLine("Размеры слонов не равны");
+            }
 
             Bear bear = new Bear("Рык", "Бурый");
             bear.setName("Bear1");

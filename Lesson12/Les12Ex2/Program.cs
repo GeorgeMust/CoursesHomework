@@ -31,7 +31,7 @@ namespace Lesson12Ex2
         {
             Zoo zoo = new Zoo(3, 3);
 
-            Elephant elephant = new Elephant("Гудок", "Серый");
+            Elephant elephant = new Elephant("Гудок", "Серый", 3.2);
             elephant.setName("El1");
             elephant.displayAnimal();
             Console.WriteLine(elephant.getName());
