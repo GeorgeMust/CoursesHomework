@@ -5,7 +5,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string filePath = "C:\\Work\\КурсыC#\\example.txt"; // Путь к файлу
+        string filePath = "C:\\Work\\КурсыC#\\example.txt";
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {
